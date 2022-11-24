@@ -1,4 +1,7 @@
-FROM php:8.1-cli
-RUN apt-get update && apt-get install -y libpq-dev
-RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
-RUN docker-php-ext-install pdo pdo_pgsql
+FROM php:8.1-cli-alpine
+
+# Install PostgreSQL
+RUN set -ex \
+        && apk --no-cache add postgresql-libs postgresql-dev \
+        && docker-php-ext-install pgsql pdo_pgsql \
+        && apk del postgresql-dev
