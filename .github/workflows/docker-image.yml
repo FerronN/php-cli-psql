@@ -24,9 +24,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ferronn/php-pgsql
+          images: ferronn/php-cli-pgsql
           tags: |
-            ferronn/php-pgsql:latest
+            latest
             type=raw,value={{date 'DD.MM.YYYY'}}
 
       - name: Build and push Docker image
