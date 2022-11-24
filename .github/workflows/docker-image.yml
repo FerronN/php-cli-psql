@@ -33,5 +33,5 @@ jobs:
           push: true
           tags: |
             ferronn/php-pgsql:latest
-            type=raw,value={{date 'DD.MM.YYYY'}}
+            type=raw,value={{date 'DDMMYYYY'}}
             
